@@ -1,4 +1,4 @@
-# SUMMIT_23_SNOWPARK_DATA_LAKE_WORKLOADS
+# Snowflake Summit 2023: Snowpark Data Lake Workloads
 
 The code in this repo was presented at the 2023 Snowflake Summit. Link to Abstract:
 https://www.snowflake.com/summit/sessions?agendaPath=session/1116041
