@@ -21,16 +21,8 @@ CREATE WAREHOUSE COMPUTE_2XL_WH WAREHOUSE_SIZE = '2X-Large';
 -- CUSTOMER
 -- Start with loading the Customer Data
 ------------------------------------------
---Create a stage to land the files
-CREATE STAGE CUSTOMER_360.CUSTOMER_DATA_STAGE; 
-
 --there are various ways to put files onto the stage. I recomomnd using SnowSQL. Here is a sample command:
 --  put file://customer_data/* @CUSTOMER_360.CUSTOMER_DATA_STAGE/customer_data/'
-
---create file format for parquet
-CREATE OR REPLACE FILE FORMAT CUSTOMER_360.PARQUET_FILE_FORMAT
-	TYPE = parquet
-;
 
 USE WAREHOUSE COMPUTE_XS_WH;
 --once the data is loaded we can inter the schmea to create the table definition 
