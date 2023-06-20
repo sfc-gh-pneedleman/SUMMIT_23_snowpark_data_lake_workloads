@@ -98,11 +98,11 @@ cs.execute("USE WAREHOUSE COMPUTE_XS_WH")
 # #########################################################
 
 #check row counts of newly created tables. should be 50M customers, 25k invoices and 500M txn
-validation_sql = """SELECT  'CUSTOMER', COUNT(*) CNT FROM CUSTOMER_360.CUSTOMER 
+validation_sql = """SELECT  'CUSTOMER_360.CUSTOMER', COUNT(*) CNT FROM CUSTOMER_360.CUSTOMER 
                     UNION ALL 
-                    SELECT  'INVOICE_PDFS', COUNT(*) CNT FROM BILLING.VW_PDF_RAW_TEXT 
+                    SELECT  'BILLING.VW_PDF_RAW_TEXT', COUNT(*) CNT FROM BILLING.VW_PDF_RAW_TEXT 
                     UNION ALL
-                    SELECT  'TXN_HISTORY', COUNT(*) CNT FROM SALES.TXN_HISTORY"""
+                    SELECT  'SALES.TXN_HISTORY', COUNT(*) CNT FROM SALES.TXN_HISTORY"""
 cs.execute(validation_sql)
 results = cs.fetchall()
 for row in results:
