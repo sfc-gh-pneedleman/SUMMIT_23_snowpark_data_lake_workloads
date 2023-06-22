@@ -1,0 +1,4 @@
+boto3==1.24.78
+confluent_kafka==1.9.2
+cryptography==36.0.2
+requests==2.27.1

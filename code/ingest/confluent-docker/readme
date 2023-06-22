@@ -1,0 +1,5 @@
+1. download docker from 'docker.com'
+2. open the docker app
+3. navigate to the path with this folder and type 'docker-compose up -d' in terminal 
+4. many confluent kafka services will dowload -- this will take some time 
+5. wait some time and navigate to localhost:9021

@@ -1,0 +1,23 @@
+{
+  "name": "SnowflakeSinkConnector_Sale_TXN_Streaming",
+  "config": {
+    "connector.class": "com.snowflake.kafka.connector.SnowflakeSinkConnector",
+    "tasks.max": "2",
+    "key.converter": "org.apache.kafka.connect.storage.StringConverter",
+    "value.converter": "org.apache.kafka.connect.json.JsonConverter",
+    "topics": "sales_txn",
+    "snowflake.url.name": "<sforg-account.snowflakecomputing.com:443>",
+    "snowflake.user.name": "<username>",
+    "snowflake.private.key": "<Private Key>",
+    "snowflake.database.name": "<Database>",
+    "snowflake.schema.name": "SALES",
+    "snowflake.role.name": "SYSADMIN",
+    "snowflake.topic2table.map": "sales_txn:TXN_STREAM",
+    "buffer.count.records": "10000",
+    "buffer.size.bytes": "5000000",
+    "buffer.flush.time": "10",
+    "jmx": "true",
+    "snowflake.ingestion.method": "SNOWPIPE_STREAMING",
+    "value.converter.schemas.enable": "false"
+  }
+}
