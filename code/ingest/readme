@@ -3,3 +3,4 @@ run 'python  0_setup_env_and_ingest.py'
 the file will look though the SQL files in the directory and execute them in order. 
 First creating the table, schema, stages, and warehouses. Then putting files to the stage and finally 
 loading the data to the raw tables
+Additonal marketplace data is needed. Please obtain data from: https://app.snowflake.com/marketplace/listing/GZT1ZA3NK6/similarweb-ltd-product-views-and-purchases-on-retail-sites-and-marketplaces
