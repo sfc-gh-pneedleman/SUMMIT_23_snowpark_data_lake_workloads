@@ -15,7 +15,7 @@ st.header("Simple Recommendation App")
 def get_curated_sales_data():
     session = get_active_session()
     table_name = "SUMMIT_23_CURATED_DB.SALES_PREDICTION.PRODUCT_SALES"
-    df = session.sql("SELECT CUSTOMER_ID,  LAST_NAME || ', ' || FIRST_NAME AS CUST_NAME, MAIN_CATEGORY, SUB_CATEGORY, TITLE, PRODUCT_ID FROM " + table_name + " WHERE STATE = 'Nevada' LIMIT 100000")
+    df = session.sql("SELECT CUSTOMER_ID,  LAST_NAME || ', ' || FIRST_NAME AS CUST_NAME, MAIN_CATEGORY, SUB_CATEGORY, TITLE, PRODUCT_ID FROM " + table_name + " WHERE STATE = 'Nevada' LIMIT 1000000")
     df_pandas = df.to_pandas()
     st.success("Loaded customer sales data successfully...")
     return df_pandas
