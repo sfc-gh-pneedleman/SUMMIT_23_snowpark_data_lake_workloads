@@ -3,3 +3,5 @@
 3. navigate to the path with this folder and type 'docker-compose up -d' in terminal 
 4. many confluent kafka services will dowload -- this will take some time 
 5. wait some time and navigate to localhost:9021
+6. once running run the following command to push data to kafka and into Snowflake 
+        'python streaming_kafka_datagen.py confluent_python.config sales_txn'
