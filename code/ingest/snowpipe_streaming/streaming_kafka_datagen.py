@@ -42,7 +42,7 @@ payment_list = ['VISA',  'MASTERCARD', 'AMEX', 'DISCOVER', 'GIFT_CARD']
 ## MESSAGE CONFIG SETTINGS 
 ##
 ## number of messages to push
-num_messages = 10000
+num_messages = 100000
 ##
 ## delay between messages in sec
 delay=.01 #10 MS or 100 per sec

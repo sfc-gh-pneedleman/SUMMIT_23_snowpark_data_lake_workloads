@@ -4,7 +4,7 @@ from snowflake.snowpark.context import get_active_session
 import pandas as pd
 
 st.set_page_config(page_title="Unpaid Invoice Analysis", page_icon="💡", layout="wide")
-st.header("Unpaid Invoice Analysis")
+st.title("Unpaid Invoice Analysis")
 
 
 session = get_active_session()
@@ -36,17 +36,21 @@ else:
 
 df_pandas = df_pandas.loc[df_pandas['STATE'].isin(selected_options)]
 
-
-st.title('Inpaid Invoices by Customer')
+chart_selection = alt.selection_interval()
+st.header('Unpaid Invoices by Customer')
 c = alt.Chart(df_pandas).mark_bar().encode(
-   x=alt.X('Customer:N', sort=None), y='Invoice Total:Q', color='Invoice Total:Q'
-    
+   x=alt.X('Customer:N', sort=None), y='Invoice Total:Q',
+   color=alt.condition(chart_selection, 'Invoice Total:Q', alt.value('lightgray'))
 ).transform_window(
     rank='rank(Invoice Total)',
     sort=[alt.SortField('Invoice Total', order='descending')]
 ).transform_filter(
     (alt.datum.rank < 20)
+).add_selection(
+    chart_selection
 )
+#st.write(chart_selection)
+
 
 st.altair_chart(c, use_container_width=True)
 
