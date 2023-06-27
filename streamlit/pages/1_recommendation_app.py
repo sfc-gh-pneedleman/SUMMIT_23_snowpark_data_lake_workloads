@@ -118,5 +118,5 @@ if __name__ == "__main__":
         selected_customers, selected_data, cosine_sim = prepare_recommendation_candidates()
     with st.spinner('Refreshing Recommendation Model App'):
         simple_recommendation_app(selected_customers, selected_data, cosine_sim)
-        st.snow()
-        st.balloons()
+        #st.snow()
+        #st.balloons()
